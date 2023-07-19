@@ -1,0 +1,19 @@
+server:
+  port: 8083
+spring:
+  sql:
+    init:
+      mode: always
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=public
+    username: postgres
+    password: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL81Dialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: none
+
+sensor:
+  retry:
+    maxAttempts: 4
